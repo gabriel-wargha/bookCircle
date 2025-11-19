@@ -1,33 +1,30 @@
-// auth.js
-import { firebaseConfig } from './firebaseConfig.js';
-
-// Check SDK loaded
-if (!window.firebase || !firebase.initializeApp) {
-	throw new Error('Firebase SDK not loaded. Add script tags before auth.js');
-}
-
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+// auth.js (modular Firebase usage)
+import { auth } from './firebaseConfig.js';
+import {
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+	signOut as firebaseSignOut,
+	onAuthStateChanged as firebaseOnAuthStateChanged,
+} from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 
 // Register new user
 export async function register(email, password) {
-	const cred = await auth.createUserWithEmailAndPassword(email, password);
-	return cred.user; // EXPLAIN: returns the authenticated user object
+	const cred = await createUserWithEmailAndPassword(auth, email, password);
+	return cred.user;
 }
 
 // Login existing user
 export async function login(email, password) {
-	const cred = await auth.signInWithEmailAndPassword(email, password);
+	const cred = await signInWithEmailAndPassword(auth, email, password);
 	return cred.user;
 }
 
 // Logout
 export async function logout() {
-	return auth.signOut();
+	return firebaseSignOut(auth);
 }
 
 // Listen for auth state changes
 export function onAuthStateChanged(cb) {
-	return auth.onAuthStateChanged(cb);
+	return firebaseOnAuthStateChanged(auth, cb);
 }

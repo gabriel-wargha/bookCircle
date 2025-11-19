@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Redirect if already logged in
 	onAuthStateChanged((user) => {
-		if (user) window.location.href = 'index.html';
+		if (user) window.location.href = '../index.html';
 	});
 
 	form.addEventListener('submit', async (e) => {
