@@ -1,6 +1,6 @@
 import { searchBooks, displayBooks } from './bookUtils.js';
 import { onAuthStateChanged } from './auth.js'; // to know if user is logged in
-import { addBook, getBooks } from './books.js'; // Firestore helpers
+import { addBook, getBooks, removeBook } from './books.js'; // Firestore helpers
 
 document.addEventListener('DOMContentLoaded', function () {
 	// Grab references to HTML elements
@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (currentUser) {
 			const addBtn = document.createElement('button');
 			addBtn.textContent = 'Add to My List';
+			addBtn.classList.add('addToListBtn');
 			addBtn.classList.add('view-button');
 			addBtn.addEventListener('click', async () => {
 				// Save book to Firestore
@@ -113,8 +114,49 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Purpose: Display books inside the <ul>
 	// -----------------------------
 	function renderBookList(books, el) {
+		if (!books || books.length === 0) {
+			el.innerHTML = '<li>No saved books yet.</li>';
+			return;
+		}
+
 		el.innerHTML = books
-			.map((b) => `<li>${b.title} by ${b.author}</li>`)
+			.map((b, idx) => {
+				const thumb =
+					b.thumbnail && b.thumbnail !== ''
+						? b.thumbnail
+						: './icons/icons8-book-25.png';
+				const safeTitle = b.title || 'Untitled';
+				const safeAuthor = b.author || 'Unknown author';
+				return `
+						<li class="saved-book-item" data-idx="${idx}">
+							<img class="saved-book-thumb" src="${thumb}" alt="${safeTitle} cover" width="40" height="60" />
+							<span class="saved-book-meta">${safeTitle} by ${safeAuthor}</span>
+							${
+								currentUser
+									? `<button class="remove-btn" data-idx="${idx}" aria-label="Remove"><img src="./icons/icons8-trash-16.png" alt="Remove" width="16" height="16" /></button>`
+									: ''
+							}
+						</li>`;
+			})
 			.join('');
+
+		// Attach remove handlers (only when user is logged in)
+		if (currentUser) {
+			el.querySelectorAll('.remove-btn').forEach((btn) => {
+				btn.addEventListener('click', async (e) => {
+					e.stopPropagation();
+					const idx = Number(btn.dataset.idx);
+					const bookToRemove = books[idx];
+					try {
+						await removeBook(currentUser.uid, bookToRemove);
+						const updated = await getBooks(currentUser.uid);
+						renderBookList(updated, bookListEl);
+					} catch (err) {
+						console.error('removeBook error', err);
+						alert('Failed to remove book. Check console for details.');
+					}
+				});
+			});
+		}
 	}
 });

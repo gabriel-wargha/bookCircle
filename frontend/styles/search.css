@@ -137,6 +137,29 @@ main {
 	cursor: pointer;
 }
 
+.addToListBtn {
+	margin-left: 20px;
+}
+
+/* Book List */
+#bookList {
+	padding: 0;
+	list-style: none;
+	border-radius: 12px;
+	margin: 0 auto;
+	background: #111;
+}
+
+#bookList li {
+	padding: 15px 20px;
+	border-bottom: 1px solid #2d2d2d;
+	color: #eee;
+}
+
+#bookList li:last-child {
+	border-bottom: none;
+}
+
 @keyframes fadeIn {
 	from {
 		opacity: 0;

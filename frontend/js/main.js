@@ -4,15 +4,15 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	if (loginBtn) {
 		loginBtn.addEventListener('click', function () {
-			// Navigate to the frontend login page
-			window.location.href = './frontend/login.html';
+			// Navigate to the frontend login page (root-relative so it works from any page)
+			window.location.href = '/frontend/login.html';
 		});
 	}
 
 	if (signupBtn) {
 		signupBtn.addEventListener('click', function () {
-			// Navigate to the frontend register page
-			window.location.href = './frontend/register.html';
+			// Navigate to the frontend register page (root-relative so it works from any page)
+			window.location.href = '/frontend/register.html';
 		});
 	}
 });
