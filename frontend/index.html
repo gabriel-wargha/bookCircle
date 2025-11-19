@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookCircle – Discover, Review, and Join Reading Groups</title>
+    <meta name="description"
+        content="BookCircle helps you discover books, join reading groups, track your reading, and connect with fellow readers." />
+    <link rel="preload" as="image" href="./images/Gemini_Generated_Image_640pi4640pi4640p.png" type="image/png">
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./icons/icons8-book-30.png" alt="" />
+            <a href="./index.html"><span class="logo-text">Book<span class="bold">Circle</span></span></a>
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li><a href="./search.html">Books</a></li>
+                <li><a href="./groups.html">Reading Groups</a></li>
+                <li><a href="./reviews.html">Reviews</a></li>
+
+            </ul>
+        </div>
+
+        <div class="auth-buttons">
+            <button class="login">Log in</button>
+            <button class="signup">Sign Up</button>
+            <button id="logoutBtn">Logout</button>
+            <span id="userEmail"></span>
+            <span class="menu-icon"><img src="./icons/icons8-computer-50.png" alt="" /></span>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Find your next favorite book</h1>
+                <p>Join a book club, read with friends, and discover your next favorite book.</p>
+            </div>
+            <div class="hero-image">
+                <img src="./images/Gemini_Generated_Image_640pi4640pi4640p.png  " alt="Reading group" width="600"
+                    height="400" />
+            </div>
+        </div>
+    </main>
+
+    <div class="cards">
+        <h1>Welcome to a new world of possibilities</h1>
+        <div class="card">
+            <div class="icon-box"><img src="./icons/icons8-book-25.png" alt=""></div>
+            <h3>Track Your Reading Journey</h3>
+            <p>Log and review the books you've read, set reading goals, and visualize your progress over time.</p>
+        </div>
+        <div class="card">
+            <div class="icon-box"><img src="./icons/icons8-star-25.png" alt=""></div>
+            <h3>Rate & Review Books</h3>
+            <p>Share your thoughts and rate books you've read. Discover personalized recommendations based on your
+                preferences.</p>
+        </div>
+        <div class="card">
+            <div class="icon-box"><img src="./icons/icons8-calendar-25.png" alt=""></div>
+            <h3>Schedule & Manage Meetups</h3>
+            <p>Organize book club meetings, send invitations, and keep track of your reading schedule.</p>
+        </div>
+        <div class="card">
+            <div class="icon-box"><img src="./icons/icons8-comment-25.png" alt=""></div>
+            <h3>Share Insights & Discussions</h3>
+            <p>Capture key takeaways, highlight memorable quotes, and engage in thoughtful discussions.</p>
+        </div>
+        <div class="card">
+            <div class="icon-box"><img src="./icons/icons8-group-25.png" alt=""></div>
+            <h3>Discover Similar Readers</h3>
+            <p>Connect with readers who share your literary interests and join existing book clubs.</p>
+        </div>
+        <div class="card">
+            <div class="icon-box"><img src="./icons/icons8-world-25.png" alt=""></div>
+            <h3>In-Person & Remote Options</h3>
+            <p>Find and join book clubs that meet in person or connect virtually with readers worldwide.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page">
+                <img src="./images/facebook.png" alt="" role="presentation" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page">
+                <img src="./images/twitter.png" alt="" role="presentation" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page">
+                <img src="./images/instagram.png" alt="" role="presentation" />
+            </a>
+        </div>
+        <div class="final">
+            <a href="#" aria-label="Copyright information">© BookCircle All rights reserved</a>
+            <a href="#" aria-label="View Privacy Policy">Privacy Policy</a>
+            <a href="#" aria-label="View Terms of service">Terms of service</a>
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs: must load FIRST -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
+</body>
+
+</html>

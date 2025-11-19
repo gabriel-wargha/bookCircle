@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	background-color: #0b0b0b; /* Preto premium */
+	color: #dfdede; /* Cinza suave */
+}
+
+/* HEADER */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px 32px;
+	background-color: #111; /* Preto fosco */
+	border-bottom: 1px solid #1f1f1f;
+}
+
+.logo a {
+	text-decoration: none;
+	color: #8b5cf6; /* Roxo elegante */
+}
+
+.nav ul {
+	display: flex;
+	gap: 20px;
+	list-style: none;
+}
+
+.nav a {
+	color: #d6d6d6;
+	text-decoration: none;
+	font-weight: 400;
+}
+
+.nav a:hover {
+	color: #b9a2ff; /* Roxo bem discreto */
+}
+
+/* AUTH BUTTONS */
+.auth-buttons {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+
+.auth-buttons .login,
+.auth-buttons .signup {
+	padding: 8px 16px;
+	border-radius: 8px;
+	border: 1px solid #3b3b3b;
+	background: #161616;
+	color: #d6d6d6;
+	transition: 0.2s ease;
+}
+
+.auth-buttons .login:hover,
+.auth-buttons .signup:hover {
+	border-color: #8b5cf6;
+	color: #8b5cf6;
+}
+
+#logoutBtn {
+	padding: 8px 16px;
+	border-radius: 8px;
+	border: 1px solid #3b3b3b;
+	background: #161616;
+	color: #d6d6d6;
+	transition: 0.2s ease;
+	cursor: pointer;
+}
+
+#logoutBtn:hover {
+	border-color: #8b5cf6;
+	color: #8b5cf6;
+}
+
+/* HERO SECTION */
+main {
+	background-color: #0b0b0b;
+	min-height: calc(100vh - 80px);
+	padding: 40px 32px;
+	padding-top: 200px;
+}
+
+.hero-section {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 80px;
+}
+
+.hero-content {
+	flex: 1;
+	padding: 20px;
+}
+
+.hero-image {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.hero-image img {
+	max-width: 650px;
+	border-radius: 12px;
+	border: 1px solid #1e1e1e; /* discreto */
+}
+
+/* CARDS */
+.cards,
+.ratings {
+	margin: 50px 20px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+.cards > h1,
+.ratings > h1 {
+	width: 100%;
+	text-align: center;
+	color: #b9a2ff;
+	margin-bottom: 20px;
+	font-weight: 500;
+}
+
+.card,
+.rating {
+	width: 30%;
+	padding: 32px;
+	border-radius: 10px;
+	background: #111;
+	border: 1px solid #1f1f1f;
+}
+
+.card h3 {
+	color: #b9a2ff;
+	margin-bottom: 10px;
+}
+
+.card p {
+	color: #b0b0b0;
+}
+
+/* RATINGS */
+.rating {
+	border: 1px solid #2c1f4a; /* roxo fosco */
+}
+
+/* FOOTER */
+footer {
+	width: 100%;
+	background: #111;
+	color: #8b5cf6;
+	text-align: center;
+	padding: 20px 0;
+	border-top: 1px solid #1f1f1f;
+}
+
+footer a {
+	color: #b9a2ff;
+	text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+	header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.nav ul {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.auth-buttons {
+		flex-direction: column;
+		width: 100%;
+		align-items: stretch;
+	}
+
+	.hero-section {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.cards {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.card,
+	.rating {
+		width: 100%;
+	}
+}
