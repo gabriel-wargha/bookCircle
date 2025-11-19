@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/search.css ">
+    <script type="module" src="./js/search.js"></script>
+    <script src="./js/main.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./icons/icons8-book-25.png" alt="">
+            <a href="./index.html"><span class="logo-text">Book<span class="bold">Circle</span></span></a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="./search.html">Books</a></li>
+                <li><a href="./groups.html">Reading Groups</a></li>
+                <li><a href="./reviews.html">Reviews</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="search">
+            <h1>Search Books</h1>
+        </div>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search by title or author" required>
+            <button type="submit">Search</button>
+        </form>
+
+
+        <section id="results"></section>
+
+        <h2>My Book List</h2>
+        <ul id="bookList"></ul>
+
+    </main>
+
+    <div id="bookModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <h3 id="modalAuthor"></h3>
+            <img id="modalImage" src="" alt="Book cover" />
+            <p id="modalDescription"></p>
+            <div id="modalFooter"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

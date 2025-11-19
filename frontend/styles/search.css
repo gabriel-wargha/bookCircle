@@ -1,0 +1,191 @@
+/* Header ------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Search form */
+
+body {
+	background-color: #000000;
+}
+
+main {
+	margin: 100px auto;
+	padding: 0 16px;
+	max-width: 1200px;
+}
+.search {
+	text-align: center;
+	margin: 10px;
+	color: #8b5cf6;
+}
+
+.search h1 {
+	font-size: 2rem;
+	font-weight: 600;
+	color: #d396ff;
+}
+
+#searchForm {
+	display: flex;
+	justify-content: center;
+	gap: 12px;
+	margin: 20px;
+}
+
+#searchInput {
+	padding: 10px;
+	width: 300px;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	font-size: 1rem;
+}
+
+#searchForm button,
+.view-button {
+	background-color: #8b5cf6;
+	color: white;
+	padding: 10px 16px;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+#searchForm button:hover {
+	background-color: #333;
+}
+
+/* Book cards */
+#results {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 20px;
+	padding: 20px;
+}
+
+.bookCard {
+	background: rgb(88, 9, 162);
+	padding: 12px;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.bookCard img {
+	height: auto;
+	max-height: 200px;
+	width: auto;
+	object-fit: contain;
+	margin-bottom: 10px;
+}
+
+.bookCard h3 {
+	font-size: 1rem;
+	margin: 0 0 4px;
+}
+
+.bookCard p {
+	color: #555;
+	font-size: 0.9rem;
+}
+
+.fade-in {
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+}
+
+.modal.hidden {
+	display: none;
+}
+
+.modal-content {
+	background-color: rgb(0, 0, 0);
+	padding: 2rem;
+	width: 80%;
+	max-width: 600px;
+	border-radius: 10px;
+	position: relative;
+	box-shadow: 0 0 10px black;
+	animation: fadeIn 0.3s ease-in-out;
+}
+
+.close-button {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 600px) {
+	.modal-content {
+		width: 90%;
+		padding: 1.5rem;
+	}
+
+	.bookCard img {
+		height: auto;
+		max-height: 180px;
+		width: auto;
+	}
+
+	#searchForm {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#searchForm input,
+	#searchForm button {
+		width: 100%;
+		max-width: 320px;
+	}
+
+	.nav ul {
+		flex-direction: column;
+		gap: 10px;
+		align-items: center;
+	}
+
+	header {
+		flex-direction: column;
+		gap: 20px;
+		padding: 16px;
+	}
+
+	.auth-buttons {
+		flex-direction: column;
+		gap: 8px;
+		margin-right: 0;
+	}
+}
