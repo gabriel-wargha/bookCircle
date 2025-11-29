@@ -2,45 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./js/groups.js"></script>
-    <link rel="stylesheet" href="./styles/style.css">
-    <script src="./js/main.js" defer></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/groups.css" />
+    <title>BookCircle - Groups</title>
 </head>
 
 <body>
-
     <header>
         <div class="logo">
             <img src="./icons/icons8-book-25.png" alt="">
-            <a href="../index.html"><span class="logo-text">Book<span class="bold">Circle</span></span></a>
+            <a href="../index.html">
+                <span class="logo-text">Book<span class="bold">Circle</span></span>
+            </a>
         </div>
         <div class="nav">
             <ul>
                 <li><a href="./search.html">Books</a></li>
-                <li><a href="./groups.html">Reading Groups</a></li>
+                <li><a href="./groups.html" class="active">Reading Groups</a></li>
                 <li><a href="./reviews.html">Reviews</a></li>
             </ul>
         </div>
-
     </header>
 
     <h1>Reading Groups</h1>
 
+    <!-- Formulário de criação de grupos -->
     <form id="groupForm" class="group-form">
         <input type="text" id="groupName" placeholder="Group Name" required />
         <input type="text" id="groupDesc" placeholder="Description" required />
+        <input type="text" id="groupTime" placeholder="Time" required />
+        <input type="text" id="groupZoom" placeholder="Zoom Link" required />
         <button type="submit">Create Group</button>
     </form>
 
+    <!-- Lista de grupos disponíveis -->
     <h2>Available Groups</h2>
     <ul id="groupList"></ul>
 
+    <!-- Lista de grupos do usuário -->
     <h2>Your Groups</h2>
     <ul id="myGroupsList"></ul>
 
+    <!-- Modal apenas de leitura -->
+    <div id="groupModal" class="hidden modal">
+        <div class="modal-content">
+            <h2 id="modalGroupName"></h2>
+            <p id="modalGroupTime"></p>
+            <p id="modalGroupDesc"></p>
+            <p id="modalGroupZoom"></p>
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
 </body>
 
 </html>
