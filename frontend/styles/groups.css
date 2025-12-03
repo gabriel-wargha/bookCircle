@@ -27,13 +27,6 @@ header .logo img {
 	margin-right: 8px;
 }
 
-header .logo a {
-	color: #dfdede;
-	text-decoration: none;
-	font-weight: 700;
-	font-size: 1.2rem;
-}
-
 header .nav ul {
 	list-style: none;
 	display: flex;

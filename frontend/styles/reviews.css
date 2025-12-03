@@ -1,0 +1,120 @@
+.review-page {
+	min-height: 100vh;
+	padding: 40px 20px;
+	font-family: 'Inter', sans-serif;
+	color: #dfdede; /* Cinza suave */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #0b0b0b; /* Preto premium */
+}
+
+.review-page #reviewForm {
+	background: #111; /* Preto fosco */
+	padding: 24px;
+	border-radius: 12px;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+	width: 100%;
+	max-width: 500px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin: 40px;
+	border: 1px solid #1f1f1f;
+	color: #d6d6d6;
+}
+
+.review-page #reviewForm label {
+	font-weight: 600;
+	font-size: 1rem;
+	color: #b9a2ff; /* Roxo discreto */
+}
+
+.review-page #reviewForm input[type='text'],
+.review-page #reviewForm select,
+.review-page #reviewForm textarea {
+	padding: 10px 12px;
+	border: 1px solid #3b3b3b;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-family: 'Inter', sans-serif;
+	resize: vertical;
+	transition: border-color 0.3s ease;
+	background: #161616;
+	color: #d6d6d6;
+}
+
+.review-page #reviewForm input[type='text']:focus,
+.review-page #reviewForm select:focus,
+.review-page #reviewForm textarea:focus {
+	border-color: #8b5cf6;
+	outline: none;
+	box-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+}
+
+/* Botão enviar */
+.review-page #reviewForm button {
+	background-color: #8b5cf6; /* Roxo elegante */
+	color: white;
+	font-weight: 700;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	align-self: flex-start;
+}
+
+.review-page #reviewForm button:hover {
+	background-color: #6f3bd6; /* Roxo mais escuro */
+}
+
+.review-page #reviewsList {
+	margin-top: 40px;
+	width: 100%;
+	max-width: 500px;
+	list-style: none;
+	padding: 0;
+}
+
+.review-page #reviewsList li {
+	background: #111; /* Preto fosco */
+	padding: 16px 20px;
+	border-radius: 12px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+	margin-bottom: 16px;
+	text-align: left;
+	line-height: 1.4;
+	color: #b0b0b0; /* Cinza suave */
+	border: 1px solid #1f1f1f;
+}
+
+.review-page #reviewsList li strong {
+	font-size: 1.1rem;
+	color: #b9a2ff; /* Roxo discreto */
+}
+
+.review-page #reviewsList li em {
+	font-style: normal;
+	color: #888;
+	margin-top: 6px;
+	display: block;
+	font-size: 0.9rem;
+}
+
+.review-page > h1,
+.review-page > h2 {
+	margin-bottom: 10px;
+	color: #b9a2ff; /* Roxo discreto */
+}
+
+#rating {
+	height: 60px;
+	font-size: 1.2rem;
+	padding: 6px 10px;
+	box-sizing: border-box;
+	background: #161616;
+	color: #d6d6d6;
+	border: 1px solid #3b3b3b;
+	border-radius: 8px;
+}
